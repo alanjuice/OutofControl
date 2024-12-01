@@ -1,0 +1,97 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Assets/Autotile.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/Lava.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=4]
+
+[node name="5" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 4, 1, 0, 196609, 2, 0, 196610, 13, 0, 196608, 14, 0, 196609, 15, 0, 196609, 16, 0, 196609, 17, 0, 196609, 18, 0, 196609, 19, 0, 196609, 20, 0, 196609, 21, 0, 196609, 22, 0, 196609, 23, 0, 196609, 24, 0, 7, 65536, 0, 65539, 65560, 0, 65539, 131072, 0, 131075, 131096, 0, 65539, 196614, 0, 3, 196621, 0, 3, 196632, 0, 65539, 262150, 0, 65539, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 1, 0, 262155, 1, 0, 262156, 1, 0, 262157, 0, 65539, 262168, 0, 65539, 327686, 0, 65539, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 1, 0, 327691, 1, 0, 327692, 1, 0, 327693, 0, 65539, 327704, 0, 65539, 393216, 0, 4, 393217, 0, 196609, 393218, 0, 196609, 393219, 0, 196609, 393220, 0, 196609, 393221, 0, 196609, 393222, 0, 262152, 393223, 0, 196609, 393224, 0, 196609, 393225, 0, 196609, 393226, 0, 196609, 393227, 0, 196609, 393228, 0, 196609, 393229, 0, 196615, 393240, 0, 65539, 458752, 0, 65539, 458758, 0, 65539, 458776, 0, 131075, 524288, 0, 65539, 524294, 0, 65539, 589824, 0, 65539, 589830, 0, 65539, 655360, 0, 65539, 655363, 0, 3, 655366, 0, 131075, 720896, 0, 65539, 720899, 0, 65539, 720920, 0, 3, 786432, 0, 65539, 786435, 0, 65539, 786444, 0, 3, 786456, 0, 65539, 851968, 0, 65539, 851971, 0, 65539, 851980, 0, 65539, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 1, 0, 851987, 1, 0, 851988, 1, 0, 851989, 1, 0, 851990, 1, 0, 851991, 1, 0, 851992, 0, 65539, 917504, 0, 65539, 917507, 0, 65539, 917508, 1, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 0, 65539, 917517, 1, 0, 917518, 1, 0, 917519, 1, 0, 917520, 1, 0, 917521, 1, 0, 917522, 1, 0, 917523, 1, 0, 917524, 1, 0, 917525, 1, 0, 917526, 1, 0, 917527, 1, 0, 917528, 0, 65539, 983040, 0, 65539, 983043, 0, 65539, 983044, 1, 0, 983045, 1, 0, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 0, 65539, 983053, 1, 0, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 1, 0, 983062, 1, 0, 983063, 1, 0, 983064, 0, 65539, 1048576, 0, 65539, 1048579, 0, 65539, 1048580, 1, 0, 1048581, 1, 0, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 0, 65539, 1048589, 1, 0, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 1, 0, 1048598, 1, 0, 1048599, 1, 0, 1048600, 0, 65539, 1114112, 0, 65539, 1114115, 0, 65539, 1114116, 1, 0, 1114117, 1, 0, 1114118, 1, 0, 1114119, 1, 0, 1114120, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 0, 65539, 1114125, 1, 0, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 1, 0, 1114134, 1, 0, 1114135, 1, 0, 1114136, 0, 65539, 1179648, 0, 196612, 1179649, 0, 196609, 1179650, 0, 196609, 1179651, 0, 196616, 1179652, 0, 196609, 1179653, 0, 196609, 1179654, 0, 196609, 1179655, 0, 196609, 1179656, 0, 196609, 1179657, 0, 196609, 1179658, 0, 196609, 1179659, 0, 196609, 1179660, 0, 196616, 1179661, 0, 196609, 1179662, 0, 196609, 1179663, 0, 196609, 1179664, 0, 196609, 1179665, 0, 196609, 1179666, 0, 196609, 1179667, 0, 196609, 1179668, 0, 196609, 1179669, 0, 196609, 1179670, 0, 196609, 1179671, 0, 196609, 1179672, 0, 196615 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 64, 168 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 64, 528 )
+
+[node name="Lava" type="Node2D" parent="."]
+
+[node name="Lava3" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 144, 432 )
+
+[node name="Lava4" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 368, 432 )
+
+[node name="Lava5" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 336, 432 )
+
+[node name="Lava6" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 304, 432 )
+
+[node name="Lava7" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 272, 432 )
+
+[node name="Lava8" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 240, 432 )
+
+[node name="Lava9" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 208, 432 )
+
+[node name="Lava10" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 176, 432 )
+
+[node name="Lava22" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 240, 120 )
+
+[node name="Lava23" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 368, 120 )
+
+[node name="Lava27" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 400, 120 )
+
+[node name="Lava24" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 336, 120 )
+
+[node name="Lava25" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 304, 120 )
+
+[node name="Lava26" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 272, 120 )
+
+[node name="Lava11" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 432, 408 )
+
+[node name="Lava12" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 656, 408 )
+
+[node name="Lava21" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 688, 408 )
+
+[node name="Lava20" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 720, 408 )
+
+[node name="Lava19" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 752, 408 )
+
+[node name="Lava13" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 624, 408 )
+
+[node name="Lava14" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 592, 408 )
+
+[node name="Lava15" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 560, 408 )
+
+[node name="Lava16" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 528, 408 )
+
+[node name="Lava17" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 496, 408 )
+
+[node name="Lava18" parent="Lava" instance=ExtResource( 2 )]
+position = Vector2( 464, 408 )

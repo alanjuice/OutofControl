@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assets/gun1.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Bullet.cs" type="Script" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 33.6, 11.2 )
+
+[node name="Bullet" type="Area2D" groups=["Bullet"]]
+scale = Vector2( 5, 5 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="bullet" type="Sprite" parent="."]
+position = Vector2( -4.76837e-07, 1.2 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 1 )
+vframes = 2
+frame = 1
+
+[node name="collision" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="explode" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+speed_scale = 5.0
+explosiveness = 0.3
+randomness = 0.25
+direction = Vector2( 1, 1 )
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 50.0
+angular_velocity = 40.0
+linear_accel = 10.0
+scale_amount = 30.0
+color = Color( 0.745098, 0.466667, 0.196078, 1 )

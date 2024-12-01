@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Autotile.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.3
+
+[sub_resource type="CanvasItemMaterial" id=2]
+
+[node name="0" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 339.877, 335.357 )
+physics_material_override = SubResource( 1 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 648, 424 )
+
+[node name="Label" type="Label" parent="."]
+material = SubResource( 2 )
+margin_left = 240.0
+margin_top = 512.0
+margin_right = 488.0
+margin_bottom = 664.0
+custom_fonts/font = ExtResource( 4 )
+text = "use the mouse to look around"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 146.662
+margin_top = 33.9957
+margin_right = 394.662
+margin_bottom = 185.996
+custom_fonts/font = ExtResource( 4 )
+text = "press r to restart the level"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 344.0
+margin_top = 208.0
+margin_right = 592.0
+margin_bottom = 421.0
+custom_fonts/font = ExtResource( 4 )
+text = "use left mouse button to shoot"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TileMap2" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 917507, 0, 196608, 917508, 0, 196609, 917509, 0, 196609, 917510, 0, 7, 917521, 0, 4, 917522, 0, 196609, 917523, 0, 196609, 917524, 0, 196610, 983046, 0, 196612, 983047, 0, 196609, 983048, 0, 196609, 983049, 0, 196609, 983050, 0, 196609, 983051, 0, 196609, 983052, 0, 196609, 983053, 0, 196609, 983054, 0, 196609, 983055, 0, 196609, 983056, 0, 196609, 983057, 0, 196615 )

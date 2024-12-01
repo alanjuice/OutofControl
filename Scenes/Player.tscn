@@ -1,0 +1,100 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Assets/player.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.cs" type="Script" id=2]
+[ext_resource path="res://Assets/gun.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Sounds/Gun+Shot2.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/bubbles.png" type="Texture" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 32.0
+
+[sub_resource type="ParticlesMaterial" id=2]
+flag_disable_z = true
+spread = 180.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 10.0
+angular_velocity = 100.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 20.0
+scale = 2.0
+color = Color( 1, 0, 0, 1 )
+
+[node name="Player" type="RigidBody2D" groups=["Player"]]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_group_": true
+}
+bullet = ExtResource( 4 )
+
+[node name="player" type="Sprite" parent="."]
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+shape = SubResource( 1 )
+
+[node name="Gun" type="Node2D" parent="."]
+scale = Vector2( 0.5, 0.5 )
+
+[node name="gun" type="Sprite" parent="Gun"]
+position = Vector2( 24, 1.99999 )
+scale = Vector2( 1, 3 )
+texture = ExtResource( 3 )
+vframes = 2
+
+[node name="RayCast2D" type="RayCast2D" parent="Gun"]
+enabled = true
+cast_to = Vector2( 300, 0 )
+collide_with_areas = true
+
+[node name="GunExplosion" type="CPUParticles2D" parent="Gun"]
+position = Vector2( 82, 0 )
+emitting = false
+amount = 50
+one_shot = true
+speed_scale = 10.0
+emission_shape = 4
+emission_points = PoolVector2Array(  )
+emission_normals = PoolVector2Array(  )
+emission_colors = PoolColorArray(  )
+gravity = Vector2( 0, 0 )
+initial_velocity = 5.0
+initial_velocity_random = 0.5
+angular_velocity = 149.23
+scale_amount = 30.0
+color = Color( 0.898039, 0.431373, 0.0901961, 1 )
+
+[node name="reload" type="TextureProgress" parent="Gun"]
+margin_left = -66.0
+margin_top = -20.0
+margin_right = -34.0
+margin_bottom = 18.0
+step = 5.0
+texture_progress = ExtResource( 7 )
+fill_mode = 4
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="fire" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 5 )
+
+[node name="outofscreen" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -2.38419e-07, 2.38419e-07 )
+scale = Vector2( 1.6, 1.6 )
+
+[node name="ded" type="Particles2D" parent="."]
+emitting = false
+amount = 50
+randomness = 1.0
+process_material = SubResource( 2 )
+
+[connection signal="screen_exited" from="outofscreen" to="." method="_on_outofscreen_screen_exited"]

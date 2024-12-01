@@ -1,0 +1,195 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/Autotile.tres" type="TileSet" id=2]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/font_big.tres" type="DynamicFont" id=5]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131073, 0, 4, 131074, 0, 196609, 131075, 0, 196609, 131076, 0, 196609, 131077, 0, 196609, 131078, 0, 196609, 131079, 0, 196609, 131080, 0, 196609, 131081, 0, 8, 131082, 0, 196609, 131083, 0, 196609, 131084, 0, 196609, 131085, 0, 196609, 131086, 0, 196609, 131087, 0, 196609, 131088, 0, 196609, 131089, 0, 8, 131090, 0, 196609, 131091, 0, 196609, 131092, 0, 196609, 131093, 0, 196609, 131094, 0, 196609, 131095, 0, 196609, 131096, 0, 7, 196609, 0, 65539, 196610, 1, 0, 196611, 1, 0, 196612, 1, 0, 196613, 1, 0, 196614, 1, 0, 196615, 1, 0, 196616, 1, 0, 196617, 0, 65539, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 1, 0, 196624, 1, 0, 196625, 0, 65539, 196626, 1, 0, 196627, 1, 0, 196628, 1, 0, 196629, 1, 0, 196630, 1, 0, 196631, 1, 0, 196632, 0, 65539, 262145, 0, 65539, 262153, 0, 65539, 262161, 0, 65539, 262168, 0, 65539, 327681, 0, 65539, 327689, 0, 65539, 327697, 0, 65539, 327704, 0, 65539, 393217, 0, 65539, 393225, 0, 65539, 393233, 0, 65539, 393240, 0, 65539, 458753, 0, 65539, 458757, 0, 3, 458761, 0, 65539, 458765, 0, 3, 458769, 0, 65539, 458773, 0, 3, 458776, 0, 65539, 524289, 0, 65539, 524293, 0, 65539, 524297, 0, 65539, 524301, 0, 65539, 524305, 0, 65539, 524309, 0, 65539, 524312, 0, 65539, 589825, 0, 65539, 589829, 0, 65539, 589833, 0, 65539, 589837, 0, 65539, 589841, 0, 65539, 589845, 0, 65539, 589848, 0, 65539, 655361, 0, 65539, 655365, 0, 65539, 655369, 0, 65539, 655373, 0, 65539, 655377, 0, 65539, 655381, 0, 65539, 655384, 0, 65539, 720897, 0, 65539, 720901, 0, 65539, 720905, 0, 131075, 720909, 0, 65539, 720913, 0, 131075, 720917, 0, 65539, 720920, 0, 65539, 786433, 0, 65539, 786437, 0, 65539, 786445, 0, 65539, 786453, 0, 65539, 786456, 0, 65539, 851969, 0, 65539, 851973, 0, 65539, 851981, 0, 65539, 851989, 0, 65539, 851992, 0, 65539, 917505, 0, 65539, 917509, 0, 65539, 917517, 0, 65539, 917525, 0, 65539, 917528, 0, 65539, 983041, 0, 65539, 983045, 0, 65539, 983046, 1, 0, 983047, 1, 0, 983048, 1, 0, 983049, 1, 0, 983050, 1, 0, 983051, 1, 0, 983052, 1, 0, 983053, 0, 65539, 983054, 1, 0, 983055, 1, 0, 983056, 1, 0, 983057, 1, 0, 983058, 1, 0, 983059, 1, 0, 983060, 1, 0, 983061, 0, 65539, 983064, 0, 65539, 1048577, 0, 65539, 1048581, 0, 65539, 1048582, 1, 0, 1048583, 1, 0, 1048584, 1, 0, 1048585, 1, 0, 1048586, 1, 0, 1048587, 1, 0, 1048588, 1, 0, 1048589, 0, 65539, 1048590, 1, 0, 1048591, 1, 0, 1048592, 1, 0, 1048593, 1, 0, 1048594, 1, 0, 1048595, 1, 0, 1048596, 1, 0, 1048597, 0, 65539, 1048600, 0, 65539, 1114113, 0, 65539, 1114117, 0, 65539, 1114118, 1, 0, 1114119, 1, 0, 1114120, 1, 0, 1114121, 1, 0, 1114122, 1, 0, 1114123, 1, 0, 1114124, 1, 0, 1114125, 0, 65539, 1114126, 1, 0, 1114127, 1, 0, 1114128, 1, 0, 1114129, 1, 0, 1114130, 1, 0, 1114131, 1, 0, 1114132, 1, 0, 1114133, 0, 65539, 1114136, 0, 65539, 1179649, 0, 196612, 1179650, 0, 196609, 1179651, 0, 196609, 1179652, 0, 196609, 1179653, 0, 196616, 1179654, 0, 196609, 1179655, 0, 196609, 1179656, 0, 196609, 1179657, 0, 196609, 1179658, 0, 196609, 1179659, 0, 196609, 1179660, 0, 196609, 1179661, 0, 196616, 1179662, 0, 196609, 1179663, 0, 196609, 1179664, 0, 196609, 1179665, 0, 196609, 1179666, 0, 196609, 1179667, 0, 196609, 1179668, 0, 196609, 1179669, 0, 196616, 1179670, 0, 196609, 1179671, 0, 196609, 1179672, 0, 196615 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 3 )]
+position = Vector2( 736, 544 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 102.113, 540.243 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 69.0
+margin_right = 422.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 5 )
+text = "screw gravity"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Lava" type="Node2D" parent="."]
+
+[node name="Lava" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 336, 144 )
+rotation = 3.14159
+
+[node name="Lava2" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 368, 144 )
+rotation = 3.14159
+
+[node name="Lava8" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 80, 144 )
+rotation = 3.14159
+
+[node name="Lava9" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 112, 144 )
+rotation = 3.14159
+
+[node name="Lava10" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 144, 144 )
+rotation = 3.14159
+
+[node name="Lava11" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 176, 144 )
+rotation = 3.14159
+
+[node name="Lava12" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 208, 144 )
+rotation = 3.14159
+
+[node name="Lava13" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 240, 144 )
+rotation = 3.14159
+
+[node name="Lava14" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 272, 144 )
+rotation = 3.14159
+
+[node name="Lava15" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 272, 144 )
+rotation = 3.14159
+
+[node name="Lava3" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 400, 144 )
+rotation = 3.14159
+
+[node name="Lava4" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 432, 144 )
+rotation = 3.14159
+
+[node name="Lava5" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 464, 144 )
+rotation = 3.14159
+
+[node name="Lava6" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 496, 144 )
+rotation = 3.14159
+
+[node name="Lava7" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 528, 144 )
+rotation = 3.14159
+
+[node name="Lava16" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 592, 144 )
+rotation = 3.14159
+
+[node name="Lava17" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 624, 144 )
+rotation = 3.14159
+
+[node name="Lava18" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 656, 144 )
+rotation = 3.14159
+
+[node name="Lava19" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 688, 144 )
+rotation = 3.14159
+
+[node name="Lava20" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 720, 144 )
+rotation = 3.14159
+
+[node name="Lava21" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 752, 144 )
+rotation = 3.14159
+
+[node name="Lava22" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 464, 464 )
+
+[node name="Lava23" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 496, 464 )
+
+[node name="Lava24" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 528, 464 )
+
+[node name="Lava25" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 560, 464 )
+
+[node name="Lava26" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 592, 464 )
+
+[node name="Lava27" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 624, 464 )
+
+[node name="Lava35" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 656, 464 )
+
+[node name="Lava28" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 208, 464 )
+
+[node name="Lava29" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 400, 464 )
+
+[node name="Lava30" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 240, 464 )
+
+[node name="Lava34" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 272, 464 )
+
+[node name="Lava31" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 304, 464 )
+
+[node name="Lava32" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 336, 464 )
+
+[node name="Lava33" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 368, 464 )
+
+[connection signal="fried" from="Lava/Lava" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava2" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava8" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava9" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava10" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava11" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava12" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava13" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava14" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava15" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava3" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava4" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava5" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava6" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava7" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava16" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava17" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava18" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava19" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava20" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava21" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava22" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava23" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava24" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava25" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava26" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava27" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava35" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava28" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava29" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava30" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava34" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava31" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava32" to="LevelChanger" method="_on_Lava_fried"]
+[connection signal="fried" from="Lava/Lava33" to="LevelChanger" method="_on_Lava_fried"]

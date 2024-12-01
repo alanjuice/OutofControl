@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Fonts/font_big.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Fonts/font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/LevelChanger.cs" type="Script" id=4]
+[ext_resource path="res://Assets/Autotile.tres" type="TileSet" id=5]
+[ext_resource path="res://Scripts/Menu.cs" type="Script" id=6]
+[ext_resource path="res://Scripts/About.cs" type="Script" id=7]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 56, 32 )
+
+[node name="Menu" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 5 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 16, 0, 196608, 17, 0, 196609, 18, 0, 7, 65541, 0, 4, 65542, 0, 196609, 65543, 0, 196610, 65554, 0, 65539, 131077, 0, 65539, 131090, 0, 65539, 196613, 0, 65539, 196626, 0, 65539, 262149, 0, 65539, 262162, 0, 65539, 327685, 0, 65539, 327698, 0, 65539, 393221, 0, 65539, 393233, 0, 196608, 393234, 0, 262151, 458757, 0, 65539, 458770, 0, 65539, 524293, 0, 65539, 524306, 0, 65539, 589829, 0, 65539, 589842, 0, 65539, 655365, 0, 65539, 655378, 0, 65539, 720901, 0, 131076, 720902, 0, 2, 720914, 0, 65539, 786437, 0, 65536, 786438, 0, 65538, 786450, 0, 65539, 851973, 0, 131072, 851974, 0, 196613, 851975, 0, 196609, 851976, 0, 196609, 851977, 0, 196609, 851978, 0, 196609, 851979, 0, 196609, 851980, 0, 196609, 851981, 0, 196609, 851982, 0, 196609, 851983, 0, 196609, 851984, 0, 196609, 851985, 0, 196609, 851986, 0, 196615 )
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 384, 400 )
+rotation = -3.10669
+
+[node name="Play" type="Area2D" parent="."]
+position = Vector2( 280, 336 )
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="Play"]
+margin_left = -80.0
+margin_top = -32.0
+margin_right = 80.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+text = "PLAY"
+align = 1
+valign = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Play"]
+shape = SubResource( 1 )
+
+[node name="About" type="Area2D" parent="."]
+position = Vector2( 504, 336 )
+script = ExtResource( 7 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Label" type="Label" parent="About"]
+margin_left = -80.0
+margin_top = -32.0
+margin_right = 80.0
+margin_bottom = 32.0
+custom_fonts/font = ExtResource( 2 )
+text = "ABOUT"
+align = 1
+valign = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="About"]
+shape = SubResource( 1 )
+
+[node name="about" type="Label" parent="About"]
+visible = false
+modulate = Color( 0.109804, 0.8, 0.831373, 1 )
+margin_left = -273.22
+margin_top = -141.26
+margin_right = 26.78
+margin_bottom = 9.73999
+custom_fonts/font = ExtResource( 2 )
+text = "
+Made by Potato Dev
+v1.0 -  2020"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="title" type="Label" parent="."]
+modulate = Color( 0.286275, 0.827451, 0.815686, 1 )
+margin_left = 200.0
+margin_top = 80.0
+margin_right = 576.0
+margin_bottom = 131.0
+custom_fonts/font = ExtResource( 1 )
+text = "Out Of Control"
+align = 1
+
+[connection signal="body_entered" from="Play" to="." method="_on_Play_body_entered"]

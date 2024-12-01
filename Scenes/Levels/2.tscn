@@ -1,0 +1,59 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Assets/Autotile.tres" type="TileSet" id=1]
+[ext_resource path="res://Scenes/LevelChanger.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Lava.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Fonts/font_big.tres" type="DynamicFont" id=5]
+
+[sub_resource type="PhysicsMaterial" id=1]
+bounce = 0.55
+
+[node name="1" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource( 3 )]
+position = Vector2( 131.987, 403.932 )
+physics_material_override = SubResource( 1 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 0, 3, 65543, 0, 0, 65544, 0, 5, 65545, 0, 196609, 65546, 0, 196609, 65547, 0, 196609, 65548, 0, 196609, 65549, 0, 7, 131073, 0, 65539, 131079, 0, 65540, 131080, 0, 131074, 131085, 0, 65539, 131090, 0, 3, 196609, 0, 65539, 196615, 0, 131075, 196621, 0, 65539, 196626, 0, 65539, 196628, 0, 4, 196629, 0, 196609, 196630, 0, 196609, 196631, 0, 7, 262145, 0, 65539, 262157, 0, 65539, 262162, 0, 65539, 262164, 0, 65539, 262167, 0, 65539, 327681, 0, 65539, 327693, 0, 65539, 327696, 0, 196608, 327697, 0, 196609, 327698, 0, 262151, 327700, 0, 65539, 327703, 0, 65539, 393217, 0, 65539, 393229, 0, 65539, 393234, 0, 65539, 393236, 0, 131075, 393239, 0, 131075, 458753, 0, 65539, 458759, 0, 3, 458765, 0, 65539, 458770, 0, 65539, 524289, 0, 65539, 524295, 0, 65539, 524301, 0, 65539, 524306, 0, 65539, 589825, 0, 65539, 589831, 0, 65539, 589837, 0, 131075, 589842, 0, 65539, 655361, 0, 65539, 655367, 0, 65539, 655378, 0, 65539, 720897, 0, 65539, 720903, 0, 65539, 720914, 0, 65539, 786433, 0, 65539, 786439, 0, 65539, 786444, 0, 0, 786445, 0, 2, 786450, 0, 65539, 851969, 0, 65539, 851975, 0, 65539, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 0, 65536, 851981, 0, 65538, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 0, 65539, 917505, 0, 65539, 917511, 0, 65539, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 0, 65536, 917517, 0, 131077, 917518, 0, 1, 917519, 0, 1, 917520, 0, 1, 917521, 0, 1, 917522, 0, 131079, 983041, 0, 196612, 983042, 0, 196609, 983043, 0, 196609, 983044, 0, 196609, 983045, 0, 196609, 983046, 0, 196609, 983047, 0, 196616, 983048, 0, 196609, 983049, 0, 196609, 983050, 0, 196609, 983051, 0, 196609, 983052, 0, 196614, 983053, 0, 131073, 983054, 0, 131073, 983055, 0, 131073, 983056, 0, 131073, 983057, 0, 131073, 983058, 0, 131074 )
+
+[node name="LevelChanger" parent="." instance=ExtResource( 2 )]
+position = Vector2( 552, 136 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 152.0
+margin_top = 528.0
+margin_right = 424.0
+margin_bottom = 579.0
+custom_fonts/font = ExtResource( 5 )
+text = "i hate lava"
+
+[node name="Lava" type="Node2D" parent="."]
+
+[node name="Lava2" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 304, 408 )
+
+[node name="Lava3" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 336, 408 )
+
+[node name="Lava5" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 368, 408 )
+
+[node name="Lava6" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 464, 408 )
+
+[node name="Lava7" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 496, 408 )
+
+[node name="Lava8" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 528, 408 )
+
+[node name="Lava9" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 560, 408 )
+
+[node name="Lava4" parent="Lava" instance=ExtResource( 4 )]
+position = Vector2( 272, 408 )
