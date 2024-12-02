@@ -1,31 +1,31 @@
 using Godot;
 
-public class AreaHandler : Node2D
+public class Menu : Node2D
 {
-    // Called when a body enters the "Play" area
-    private void _On_PlayBodyEntered(Node body)
+    private Area2D _aboutNode;
+
+    public override void _Ready()
     {
-        if (body.IsInGroup("Player"))
-        {
-        }
+        _aboutNode = GetNode<Area2D>("About");
+        _aboutNode.Connect("body_entered", this, nameof(_On_AboutBodyEntered));
     }
 
-    // Called when a body enters the "About" area
     private void _On_AboutBodyEntered(Node body)
     {
         if (body.IsInGroup("Player"))
         {
-            var about = GetNode<CanvasLayer>("about");
-            about.Visible = true;
-            // Wait for 3 seconds and then hide the "about" element
+            //If body enters the about area, display the message for 3 seconds
+            _aboutNode.GetNode<Label>("about").Visible = true;
             var timer = GetTree().CreateTimer(3f);
-            timer.Connect("timeout", this, nameof(OnAboutTimeout), new Godot.Collections.Array { about });
+            timer.Connect("timeout", this, nameof(OnAboutTimeout));
         }
     }
 
-    // Callback when the "about" timeout is finished
-    private void OnAboutTimeout(CanvasLayer about)
+    private void OnAboutTimeout()
     {
-        about.Visible = false;
+        if (_aboutNode != null)
+        {
+            _aboutNode.GetNode<Label>("about").Visible = false;
+        }
     }
 }
